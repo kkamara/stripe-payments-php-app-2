@@ -1,8 +1,8 @@
 {
-    "name": "kkamara/php-reactjs-boilerplate",
-    "version": "0.3.3",
+    "name": "kkamara/stripe-payments-php-reactjs-app-2",
+    "version": "0.1.0",
     "type": "project",
-    "description": "(2021) A GDPR compliant Laravel 10.x boilerplate with Redux.",
+    "description": "In Stripe test mode buy products. A Laravel 10.x app.",
     "keywords": [
         "web",
         "web-app",

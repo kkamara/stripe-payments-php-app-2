@@ -2,9 +2,9 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/php-reactjs-boilerplate2.png?raw=true" alt="php-reactjs-boilerplate2.png" width=""/>
 
-# PHP Reactjs Boilerplate [![API](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml)
+# Stripe Payments PHP Reactjs App 2 [![Tests Pipeline](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml)
 
-(2021) A GDPR compliant Laravel 10.x boilerplate with Redux.
+In Stripe test mode buy products. A Laravel 10.x app.
 
 * [Using Thunder Client?](#using-thunder-client)
 

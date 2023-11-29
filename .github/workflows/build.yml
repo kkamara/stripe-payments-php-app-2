@@ -11,7 +11,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: 'secret'
-          MYSQL_DATABASE: 'boilerplate'
+          MYSQL_DATABASE: 'payments_app'
           MYSQL_USER: 'user'
           MYSQL_PASSWORD: 'secret'
         ports:
@@ -68,7 +68,7 @@ jobs:
       - name: Change Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
       - name: Install javascript packages
-        run: npm install --quiet --no-progress 
+        run: npm install --quiet --no-progress
       - name: Build javascript packages
         run: npm run build
       - name: Run Laravel Server
