@@ -1,27 +1,27 @@
 import React from 'react'
 import { useSelector, } from 'react-redux'
 
-export default function Header(props) {  
+export default function Header(props) {
   const authResponse = useSelector(state=>state.auth)
 
   const renderNavLinks = () => {
     if(authResponse.data) {
-      return <a 
-        className="dropdown-item" 
+      return <a
+        className="dropdown-item"
         href="/user/logout"
       >
         Logout
       </a>
     } else {
         return <>
-          <a 
-            className="dropdown-item" 
+          <a
+            className="dropdown-item"
             href="/user/login"
           >
             Login
           </a>
-          <a 
-            className="dropdown-item" 
+          <a
+            className="dropdown-item"
             href="/user/register"
           >
             Register
@@ -49,7 +49,7 @@ export default function Header(props) {
               User
             </a>
             <ul className="dropdown-menu">
-              <li>{renderNavLinks()}</li>              
+              <li>{renderNavLinks()}</li>
             </ul>
           </li>
         </ul>
