@@ -6,6 +6,8 @@
 
 In Stripe test mode buy products. A Laravel 10.x app.
 
+* [Tinker](#tinker)
+
 * [Using Thunder Client?](#using-thunder-client)
 
 * [Installation](#installation)
@@ -27,6 +29,21 @@ In Stripe test mode buy products. A Laravel 10.x app.
 * [Contributing](#contributing)
 
 * [License](#license)
+
+## Tinker
+
+```bash
+php artisan tinker
+$ > $p = App\Models\Product::factory()->create();
+$ = App\Models\Product {#6353
+$       name: "Natus nisi quaerat ducimus quia. Animi itaque adipisci voluptatem quasi est quia nisi iure.",
+$       price: 594.57,
+$       image: "https://via.placeholder.com/640x480.png/0055cc?text=numquam",
+$       updated_at: "2023-11-30 12:51:52",
+$       created_at: "2023-11-30 12:51:52",
+$       id: 1,
+$   }
+```
 
 ## Using Thunder Client?
 
