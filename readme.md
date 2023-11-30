@@ -1,6 +1,6 @@
-<img src="https://github.com/kkamara/useful/blob/main/php-reactjs-boilerplate.png?raw=true" alt="php-reactjs-boilerplate.png" width=""/>
+<img src="https://github.com/kkamara/useful/blob/main/stripe-payments-php-reactjs-app.png?raw=true" alt="stripe-payments-php-reactjs-app.png" width=""/>
 
-<img src="https://github.com/kkamara/useful/blob/main/php-reactjs-boilerplate2.png?raw=true" alt="php-reactjs-boilerplate2.png" width=""/>
+<img src="https://github.com/kkamara/useful/blob/main/stripe-payments-php-reactjs-app2.png?raw=true" alt="stripe-payments-php-reactjs-app2.png" width=""/>
 
 # Stripe Payments PHP Reactjs App 2 [![Tests Pipeline](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml)
 
