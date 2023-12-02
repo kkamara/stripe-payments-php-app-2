@@ -134,6 +134,8 @@ The [mailhog](https://github.com/mailhog/MailHog) docker image runs at `http://l
 
 ## Misc
 
+[See Stripe Payments PHP Reactjs App.](https://github.com/kkamara/stripe-payments-php-reactjs-app)
+
 [See Github to Bitbucket Backup Repo Updater.](https://github.com/kkamara/ghbbupdater)
 
 [See PHP Docker Skeleton.](https://github.com/kkamara/php-docker-skeleton)
