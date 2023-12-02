@@ -75,13 +75,25 @@ class ProductController extends Controller
             $customer = $this->stripe
                 ->customers
                 ->retrieve($session->customer);
+
+            $order = Order::where(
+                "session_id",
+                $session->id
+            )
+                ->where("status", "unpaid")
+                ->first();
+            if (!$order) {
+                throw new NotFoundHttpException();
+            }
+            $order->status = "paid";
+            $order->save();
+            return view(
+                "product.checkout-success",
+                compact("customer")
+            );
         } catch (Exception $e) {
             throw new NotFoundHttpException();
         }
-        return view(
-            "product.checkout-success",
-            compact("customer")
-        );
     }
 
     public function cancel() {
