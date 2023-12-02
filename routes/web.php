@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 use App\Mail\Test as TestMail;
@@ -17,3 +18,7 @@ use App\Jobs\TestJob;
 |
 */
 
+Route::get(
+    "/",
+    [ProductController::class, "index"],
+);
