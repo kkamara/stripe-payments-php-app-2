@@ -2,7 +2,7 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/stripe-payments-php-reactjs-app2.png?raw=true" alt="stripe-payments-php-reactjs-app2.png" width=""/>
 
-# Stripe Payments PHP Reactjs App 2 [![Tests Pipeline](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/stripe-payments-php-reactjs-app-2/actions/workflows/build.yml)
+# Stripe Payments PHP App 2 [![Tests Pipeline](https://github.com/kkamara/stripe-payments-php-app-2/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/stripe-payments-php-app-2/actions/workflows/build.yml)
 
 In Stripe test mode buy products. A Laravel 10.x app.
 

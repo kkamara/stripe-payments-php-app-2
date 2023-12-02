@@ -1,5 +1,5 @@
 {
-    "name": "kkamara/stripe-payments-php-reactjs-app-2",
+    "name": "kkamara/stripe-payments-php-app-2",
     "version": "0.1.0",
     "type": "project",
     "description": "In Stripe test mode buy products. A Laravel 10.x app.",
