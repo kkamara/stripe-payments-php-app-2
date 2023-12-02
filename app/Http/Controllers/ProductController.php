@@ -45,8 +45,9 @@ class ProductController extends Controller
             ->create([
                 "line_items" => $lineItems,
                 "mode" => "payment",
-                "success_url" => route("checkout.success", [], true),
+                "success_url" => route("checkout.success", [], true)."?session_id={CHECKOUT_SESSION_ID}",
                 "cancel_url" => route("checkout.cancel", [], true),
+                "customer_creation" => "always",
             ]);
 
         $order = new Order();
@@ -59,8 +60,19 @@ class ProductController extends Controller
             ->away($session->url);
     }
 
-    public function success() {
-        return view("product.checkout-success");
+    public function success(Request $request) {
+        $sessionId = $request->get("session_id");
+        $session = $this->stripe
+            ->checkout
+            ->sessions
+            ->retrieve($sessionId);
+        $customer = $this->stripe
+            ->customers
+            ->retrieve($session->customer);
+        return view(
+            "product.checkout-success",
+            compact("customer")
+        );
     }
 
     public function cancel() {

@@ -7,6 +7,6 @@
         <title>Laravel</title>
     </head>
     <body class="antialiased">
-        <h1>Success</h1>
+        <h1>Success, {{ $customer->name }}</h1>
     </body>
 </html>
