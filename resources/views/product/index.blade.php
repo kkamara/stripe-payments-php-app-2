@@ -7,10 +7,21 @@
         <title>Laravel</title>
     </head>
     <body class="antialiased">
-        @foreach($products as $product)
-            <div>
-                <h2>{{$product->name}}</h2>
-            </div>
-        @endforeach
+        <div style="display: flex; gap: 2rem">
+            @foreach($products as $product)
+                <img
+                    src="{{$product->image}}"
+                    alt=""
+                    style="max-width: 100px"
+                />
+                <div class="flex: 1">
+                    <h5>£{{$product->name}}</h5>
+                </div>
+                <p>{{$product->price}}</p>
+            @endforeach
+        </div>
+        <p>
+            <button>Checkout</button>
+        </p>
     </body>
 </html>
