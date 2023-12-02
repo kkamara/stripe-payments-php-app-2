@@ -21,7 +21,13 @@
             @endforeach
         </div>
         <p>
-            <button>Checkout</button>
+            <form
+                action="{{route("checkout")}}"
+                method="POST"
+            >
+                @csrf
+                <button>Checkout</button>
+            </form>
         </p>
     </body>
 </html>
