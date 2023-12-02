@@ -26,11 +26,11 @@ Route::post(
     "/checkout",
     [ProductController::class, "checkout"],
 )->name("checkout");
-Route::post(
+Route::get(
     "/success",
     [ProductController::class, "success"],
 )->name("checkout.success");
-Route::post(
+Route::get(
     "/cancel",
     [ProductController::class, "cancel"],
 )->name("checkout.cancel");
