@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Stripe\StripeClient;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
+use Exception;
 class ProductController extends Controller
 {
     protected StripeClient|null $stripe = null;
@@ -63,16 +63,21 @@ class ProductController extends Controller
 
     public function success(Request $request) {
         $sessionId = $request->get("session_id");
-        $session = $this->stripe
-            ->checkout
-            ->sessions
-            ->retrieve($sessionId);
-        if (!$session) {
-            throw new NotFoundHttpException;
+        $customer = null;
+        try {
+            $session = $this->stripe
+                ->checkout
+                ->sessions
+                ->retrieve($sessionId);
+            if (!$session) {
+                throw new NotFoundHttpException();
+            }
+            $customer = $this->stripe
+                ->customers
+                ->retrieve($session->customer);
+        } catch (Exception $e) {
+            throw new NotFoundHttpException();
         }
-        $customer = $this->stripe
-            ->customers
-            ->retrieve($session->customer);
         return view(
             "product.checkout-success",
             compact("customer")
