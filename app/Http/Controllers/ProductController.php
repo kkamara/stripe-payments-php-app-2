@@ -60,7 +60,7 @@ class ProductController extends Controller
     }
 
     public function success() {
-
+        return view("product.checkout-success");
     }
 
     public function cancel() {
