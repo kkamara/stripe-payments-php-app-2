@@ -8,6 +8,11 @@ use App\Models\Product;
 use Stripe\StripeClient;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Exception;
+use Stripe\Webhook;
+use UnexpectedValueException;
+use Stripe\Exception\SignatureVerificationException;
+use Illuminate\Support\Facades\Log;
+
 class ProductController extends Controller
 {
     protected StripeClient|null $stripe = null;
@@ -98,5 +103,47 @@ class ProductController extends Controller
 
     public function cancel() {
 
+    }
+
+    public function webhook() {
+        $endpoint_secret = config("stripe.webhook");
+
+        $payload = @file_get_contents('php://input');
+        $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
+        $event = null;
+
+        try {
+            $event = Webhook::constructEvent(
+                $payload, $sig_header, $endpoint_secret
+            );
+        } catch(UnexpectedValueException $e) {
+            // Invalid payload
+            return response("", 400);
+        } catch(SignatureVerificationException $e) {
+            // Invalid signature
+            return response("", 400);
+        }
+        // Handle the event
+        switch ($event->type) {
+            case 'checkout.session.completed':
+                $session = $event->data->object;
+                $sessionId = $session->id;
+                Log::debug($session);
+                $order = Order::where(
+                    "session_id",
+                    $sessionId
+                )
+                    ->first();
+                if ($order && $order->status === "unpaid") {
+                    $order->status = "paid";
+                    $order->save();
+                    // Send email to customer.
+                }
+            // ... handle other event types
+            default:
+                echo 'Received unknown event type ' . $event->type;
+        }
+
+        return response("");
     }
 }
