@@ -4,7 +4,7 @@
 
 # Stripe Payments PHP App 2 [![Tests Pipeline](https://github.com/kkamara/stripe-payments-php-app-2/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/stripe-payments-php-app-2/actions/workflows/build.yml)
 
-In Stripe test mode buy products. A Laravel 10.x app.
+In Stripe test mode buy products. With web hooks. A Laravel 10.x app.
 
 * [laravel.log](#laravel-log)
 
