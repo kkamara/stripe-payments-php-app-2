@@ -6,7 +6,7 @@
 
 In Stripe test mode buy products. A Laravel 10.x app.
 
-* [laravel.log](#laravel.log)
+* [laravel.log](#laravel-log)
 
 * [Tinker](#tinker)
 
@@ -32,7 +32,8 @@ In Stripe test mode buy products. A Laravel 10.x app.
 
 * [License](#license)
 
-## laravel.log
+<a name="laravel-log"></a>
+## laravel.log 
 
 [laravel.log](https://github.com/kkamara/stripe-payments-php-app-2/blob/main/storage/logs/laravel.log).
 
